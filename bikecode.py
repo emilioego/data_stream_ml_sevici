@@ -1,14 +1,3 @@
-# City Bikes Scraper.
-#
-# Simple functions to use the citybik.es API to record bike availability in a specific city.
-# Settings for scrapers can be changed in lines 18-22
-# 
-# Built using Python 2.7
-#
-# Shane Lynn 24/03/2014
-# @shane_a_lynn
-# http://www.shanelynn.ie
-
 import requests
 import pandas as pd
 import pandas.io.sql as pdsql
