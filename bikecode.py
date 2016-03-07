@@ -1,10 +1,7 @@
-# City Bikes Scraper.
-#
+# City Bikes Scraper
 # Simple functions to use the citybik.es API to record bike availability in a specific city.
 # Settings for scrapers can be changed in lines 18-22
-# 
 # Built using Python 2.7
-#
 # Shane Lynn 24/03/2014
 # @shane_a_lynn
 # http://www.shanelynn.ie
@@ -27,7 +24,7 @@ SQLITE_FILE = "bikedb.db"           # SQLite file to save data in
 CSV_FILE = "output.csv"             # CSV file to save data in
 
 def getAllStationDetails():
-    print "\n\nScraping at " + strftime("%Y%m%d%H%M%S", gmtime())
+    print ("\n\nScraping at " + strftime("%Y%m%d%H%M%S", gmtime()))
 
     try:
         # this url has all the details
@@ -35,7 +32,7 @@ def getAllStationDetails():
         station_json = requests.get(API_URL, proxies='')
         station_data = decoder.decode(station_json.content)
     except:
-        print "---- FAIL ----"
+        print ("---- FAIL ----")
         return None
 
     #remove unnecessary data - space saving
@@ -46,7 +43,7 @@ def getAllStationDetails():
         #del station_data[ii]['station_url']
         #del station_data[ii]['coordinates']
 
-    print " --- SUCCESS --- "
+    print (" --- SUCCESS --- ")
     return station_data
 
 def writeToCsv(data, filename="output.csv"):
@@ -88,5 +85,5 @@ if __name__ == "__main__":
             else:                
                 writeToCsv(station_data, filename=CSV_FILE)
 
-        print "Sleeping for 120 seconds."
+        print ("Sleeping for 120 seconds.")
         sleep(120)
