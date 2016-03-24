@@ -44,7 +44,7 @@ while True:
         add_to_database(r.json())
 
         # Sleep for 5 minutes
-        time.sleep(10)
+        time.sleep(5*60)
 
     except:
         # Print traceback if there is an error
