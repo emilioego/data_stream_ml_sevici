@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="./css/bikes.css"/>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDVzHBQY2u6pEwLCHL_s-vmd7-Pz7J8KhI"></script>
+<script src="./bikes.js"></script>
+<head>
+<title>Dublin Bikes App</title>
+</head>
+
+    <div id="container"> <!-- Container -->
+
+        <header> <!-- Page header -->
+
+            <div id="logo"><a href="#"><img src="./images/logo.png" alt="Dublin Bikes Logo" style="height:80px;width:150px;"/></a></div>
+
+            <form id="station_select">
+                <label for="stations">Get detailed information for: </label>
+                <select name="stations">
+                    <option value="Fenian Street">Fenian St.</option>
+                    <option value="City Quay">City Quay</option>
+                    <option value="Brookfield Road">Brookfield Road</option>
+                    <option value="Emmet Road">Emmet Road</option>
+                    <option value="Roth Abbey">Rothe Abbey</option>
+                    <option value="King Street North">King St. North</option>
+                </select>
+                <input type="button" value="Go!" onclick="toggleInfo();"></input>
+            </form>
+
+        </header> <!-- End of header -->
+
+        <div id="more_info"> <!-- Expandable to display detailed information on selected station including graphs etc. -->
+
+            <h3>Station Name</h3>
+
+            <div id="day_select"> <!-- Buttons to toggle what day information is displayed for -->
+                <label class="monday"><input type="radio" name="toggle" checked>Monday</label>
+                <label class="tuesday"><input type="radio" name="toggle">Tuesday</label>
+                <label class="wednesday"><input type="radio" name="toggle">Wednesday</label>
+                <label class="thursday"><input type="radio" name="toggle">Thursday</label>
+                <label class="friday"><input type="radio" name="toggle">Friday</label>
+                <label class="saturday"><input type="radio" name="toggle">Saturday</label>
+                <label class="sunday"><input type="radio" name="toggle">Sunday</label>
+            </div> <!-- End of day select -->
+
+            <div id="graphs">
+                    <img id="chart1" src="./images/sample.png" alt="Graph/Chart" style="width:450px;height:300px;"/>
+                    <img id="chart2" src="./images/sample2.jpg" alt="Graph/Chart" style="width:450px;height:300px;"/>
+            </div>
+
+        </div> <!-- End of more info -->
+
+        <div id="mapType">
+            <button value="Full Stations">Full Stations</button>
+            <button value="All Stations">All Stations</button>
+            <button value="Free Stations">Free Stations</button>
+        
+        </div>
+        <div id="googleMap">
+            <!-- div to contain Google map displaying all stations, their capacity, and the number of bikes available (at time of page load) -->
+        </div>
+
+
+    </div> <!-- End of container -->
+
+</body>
+</html>
