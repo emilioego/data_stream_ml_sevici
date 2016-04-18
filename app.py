@@ -26,9 +26,17 @@ def close_connection(exception):
 # This route serves '/static/bikes.html'
 @app.route('/')
 def begin():
-    return render_template('bikes.html', MAPS_APIKEY = app.config["MAPS_APIKEY"])
+    return render_template('index.html', MAPS_APIKEY = app.config["MAPS_APIKEY"])
 
-
+@app.route('/station/<int:number>')
+def display_info(number):
+    con=get_db()
+    cur=con.cursor()
+    cur.execute("SELECT last_update, available_bikes FROM dublinBikes WHERE number ={}".format(number))
+    data=cur.fetchall()
+    cur.execute("SELECT address FROM dublinBikes WHERE number={}".format(number))
+    name=cur.fetchone()
+    return render_template('bikes_info.html', station_name=name[0])
 
 if __name__ == "__main__":
     app.run(debug=True)

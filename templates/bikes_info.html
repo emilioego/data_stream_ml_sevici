@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='bikes.css')}}"/>
+<script src="{{url_for('static', filename='bikes.js')}}"></script>
+<head>
+<title>Dublin Bikes App</title>
+</head>
+
+    <div id="container"> <!-- Container -->
+
+        <header> <!-- Page header -->
+
+            <div id="logo"><a href="#"><img src="{{url_for('static', filename='logo.png')}}" alt="Dublin Bikes Logo" style="height:80px;width:150px;"/></a></div>
+
+            <form id="station_select">
+                <label for="stations">Get detailed information for: </label>
+                <select id = "stations" name="stations">
+                    <option value="70">Barrow Street</option>
+                    <option value="90">Benson Street</option>
+                    <option value="88">Blackhall Place</option>
+                    <option value="2">Blessington Street</option>
+                    <option value="3">Bolton Street</option>
+                    <option value="84">Brookfield Road</option>
+                    <option value="24">Cathal Brugha Street</option>
+                    <option value="5">Charlemont Street</option>
+                    <option value="1">Chatham Street</option>
+                    <option value="6">Christchurch Place</option>
+                    <option value="99">City Quay</option>
+                    <option value="54">Clonmel Street</option>
+                    <option value="87">Collins Barracks Museum</option>
+                    <option value="65">Convention Centre</option>
+                    <option value="8">Custom House Quay</option>
+                    <option value="23">Custom House</option>
+                    <option value="10">Dame Street</option>
+                    <option value="59">Denmark Street Great</option>
+                    <option value="45">Deverell Place</option>
+                    <option value="11">Earlsfort Terrace</option>
+                    <option value="79">Eccles Street East</option>
+                    <option value="12">Eccles Street</option>
+                    <option value="83">Emmet Road</option>
+                    <option value="9">Exchequer Street</option>
+                    <option value="48">Excise Walk</option>
+                    <option value="63">Fenian Street</option>
+                    <option value="89">Fitzwilliam Square East</option>
+                    <option value="13">Fitzwilliam Square West</option>
+                    <option value="14">Fownes Street Upper</option>
+                    <option value="73">Francis Street</option>
+                    <option value="98">Frederick Street South</option>
+                    <option value="16">Georges Quay</option>
+                    <option value="17">Golden Lane</option>
+                    <option value="69">Grand Canal Dock</option>
+                    <option value="18">Grantham Street</option>
+                    <option value="57">Grattan Street</option>
+                    <option value="4">Greek Street</option>
+                    <option value="49">Guild Street</option>
+                    <option value="68">Hanover Quay</option>
+                    <option value="41">Harcourt Terrace</option>
+                    <option value="61">Hardwicke Place</option>
+                    <option value="15">Hardwicke Street</option>
+                    <option value="55">Hatch Street</option>
+                    <option value="19">Herbert Place</option>
+                    <option value="47">Herbert Street</option>
+                    <option value="92">Heuston Bridge (North)</option>
+                    <option value="100">Heuston Bridge (South)</option>
+                    <option value="94">Heuston Station (Car Park)</option>
+                    <option value="93">Heuston Station (Central)</option>
+                    <option value="7">High Street</option>
+                    <option value="20">James Street East</option>
+                    <option value="75">James Street</option>
+                    <option value="40">Jervis Street</option>
+                    <option value="72">John Street West</option>
+                    <option value="71">Kevin Street</option>
+                    <option value="97">Kilmainham Gaol</option>
+                    <option value="96">Kilmainham Lane</option>
+                    <option value="101">King Street North</option>
+                    <option value="21">Leinster Street South</option>
+                    <option value="62">Lime Street</option>
+                    <option value="76">Market Street South</option>
+                    <option value="78">Mater Hospital</option>
+                    <option value="25">Merrion Square East</option>
+                    <option value="26">Merrion Square West</option>
+                    <option value="27">Molesworth Street</option>
+                    <option value="82">Mount Brown</option>
+                    <option value="56">Mount Street Lower</option>
+                    <option value="28">Mountjoy Square West</option>
+                    <option value="66">New Central Bank</option>
+                    <option value="53">Newman House</option>
+                    <option value="60">North Circular Road</option>
+                    <option value="74">Oliver Bond Street</option>
+                    <option value="29">Ormond Quay Upper</option>
+                    <option value="86">Parkgate Street</option>
+                    <option value="30">Parnell Square North</option>
+                    <option value="31">Parnell Street</option>
+                    <option value="32">Pearse Street</option>
+                    <option value="34">Portobello Harbour</option>
+                    <option value="43">Portobello Road</option>
+                    <option value="33">Princes Street / O'Connell Street</option>
+                    <option value="85">Rothe Abbey</option>
+                    <option value="95">Royal Hospital</option>
+                    <option value="64">Sandwith Street</option>
+                    <option value="58">Sir Patrick's Dun</option>
+                    <option value="42">Smithfield North</option>
+                    <option value="35">Smithfield</option>
+                    <option value="91">South Dock Road</option>
+                    <option value="80">St James Hospital (Luas)</option>
+                    <option value="81">St. James Hospital (Central)</option>
+                    <option value="36">St. Stephen's Green East</option>
+                    <option value="37">St. Stephen's Green South</option>
+                    <option value="46">Strand Street Great</option>
+                    <option value="38">Talbot Street</option>
+                    <option value="67">The Point</option>
+                    <option value="22">Townsend Street</option>
+                    <option value="44">Upper Sherrard Street</option>
+                    <option value="102">Western Way</option>
+                    <option value="39">Wilton Terrace</option>
+                    <option value="77">Wolfe Tone Street</option>
+                    <option value="52">York Street East</option>
+                    <option value="51">York Street West</option>
+                </select>
+                <input type="button" value="Go!" onclick="toggleInfo();"></input>
+            </form>
+
+        </header> <!-- End of header -->
+
+        <div id="more_info"> <!-- Expandable to display detailed information on selected station including graphs etc. -->
+
+            <h3 id="station_title">{{station_name}}</h3>
+
+            <div id="day_select"> <!-- Buttons to toggle what day information is displayed for -->
+                <label class="monday"><input type="radio" name="toggle" checked>Monday</label>
+                <label class="tuesday"><input type="radio" name="toggle">Tuesday</label>
+                <label class="wednesday"><input type="radio" name="toggle">Wednesday</label>
+                <label class="thursday"><input type="radio" name="toggle">Thursday</label>
+                <label class="friday"><input type="radio" name="toggle">Friday</label>
+                <label class="saturday"><input type="radio" name="toggle">Saturday</label>
+                <label class="sunday"><input type="radio" name="toggle">Sunday</label>
+            </div> <!-- End of day select -->
+
+            <div id="graphs">
+                    <img id="chart1" src="{{url_for('static', filename='sample.png')}}" alt="Graph/Chart" style="width:450px;height:300px;"/>
+                    <img id="chart2" src="{{url_for('static', filename='sample2.jpg')}}" alt="Graph/Chart" style="width:450px;height:300px;"/>
+            </div>
+
+        </div> <!-- End of more info -->
+
+        <div id="mapType">
+            <button value="Full Stations">Full Stations</button>
+            <button value="All Stations">All Stations</button>
+            <button value="Free Stations">Free Stations</button>
+        
+        </div>
+        <div id="googleMap">
+            <!-- div to contain Google map displaying all stations, their capacity, and the number of bikes available (at time of page load) -->
+        </div>
+
+        <footer>
+            <img src="{{url_for('static', filename='footer.png')}}"/>
+        </footer>
+
+    </div> <!-- End of container -->
+
+
+    <script async defer type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key={{ MAPS_APIKEY }}&amp;callback=initialize"></script>
+
+</body>
+</html>

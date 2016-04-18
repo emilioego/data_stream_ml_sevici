@@ -26,7 +26,6 @@ header {
 }
 
 #more_info {
-    display:none;
     position:relative;
     background-color:#95BEC7;
     border:1px solid gray;
@@ -75,4 +74,9 @@ h3 {
     border:5px solid #084C55;
     height:500px;
     width:900px;
+}
+footer img {
+    width:100%;
+    margin-top:40px;
+    height:220px;
 }
