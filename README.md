@@ -2,7 +2,8 @@
 === Plugin Name ===
 
 Biking Dublin
-
+<img src="http://www.transportforireland.ie/assets/dublin-bikes2.png"
+ alt="Biking Dublin" title="BikingDublin" align="right" />
 Contributors: Brendan Dwyer, Michael McNulty, Romain Ducarrouge  
  
 
@@ -27,7 +28,7 @@ when a user is trying to rent the bicycle.
  
 ==INTRODUCTION==
 ----------------
-The Biking Dublin application is intended for users to get real time information regarding
+The 'Biking Dublin' application is intended for users to get real time information regarding
 bikes availability for hiring and returning at various bike stations throughout Dublin city.
 The application also offers historical data regarding daily and hourly bikes availability 
 based on stations.
@@ -47,8 +48,6 @@ This module requires the following modules:
 		https://www.python.org/downloads/
  * Pandas library for Pyton
 		https://pypi.python.org/pypi/pandas/
- * D3 library for Javascript to produce dynamic, interactive visualization graphs
-		https://d3js.org/
  * Flask framework.
 		https://pypi.python.org/pypi/Flask
  * SQLite to connect the web application to the database
@@ -90,11 +89,11 @@ This module requires the following modules:
 
    - the HTML file is in the same folder as the CSS file and the Python File and SQLITE databases
 
-   - is your browser older than: 
-		Internet Explorer 7? 
-		Firefox 43? 
-		Safari 9.1? 
-		Chrome 48?
+   - is your browser older than:   
+		Internet Explorer 7?   
+		Firefox 43?   
+		Safari 9.1?   
+		Chrome 48?  
 
 ==FAQ==
 -------
@@ -103,9 +102,9 @@ Q: 	Why are there three colors for the circles on the map?
 
 A: 	Each circle represents a unique bike station. The color of that circle represents its
 	current bike availability status. 
-	-Red Color: the station has less than 25% of the bikes available for hire.
-	-Orange Color: the station has between 25% and 75% of bikes available for hire.
-	-Green Color: the station has over 75% of the bikes available for hire.
+	-Red Color: the station has less than 25% of the bikes available for hire.  
+	-Orange Color: the station has between 25% and 75% of bikes available for hire.  
+	-Green Color: the station has over 75% of the bikes available for hire.  
  ----------------------------------------------------------------------------------------------------------
  Q:	What is the difference between the twp graphs on the page?
  
