@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      //google.charts.setOnLoadCallback(drawStuff);
+      //google.charts.setOnLoadCallback(drawChart);
+
+      function drawStuff() {
+        var data = new google.visualization.arrayToDataTable([
+          //add var for avg # of bikes for Monday at station X
+          //add var for avg # of bikes for Tuesday at station X
+          //add var for avg # of bikes for Wednesday at station X
+          //add var for avg # of bikes for Thursday at station X
+          //add var for avg # of bikes for Friday at station X
+          //add var for avg # of bikes for Saturday at station X
+          //add var for avg # of bikes for Sunday at station X
+          ['Day', 'Available Bikes'],
+          ['Monday', 44],
+          ['Tuesday', 31],
+          ['Wednesday', 12],
+          ['Thursday', 10],
+          ['Friday', 3],
+          ['Saturday', 70],
+          ['Sunday', 19]
+        ]);
+        var BikeStation = 'Barrow Street'; //Get the variable name from SLQ db
+        var options = {
+          title: 'Weekly Bike Availability',
+          width: 700,
+          legend: { position: 'none' },
+          chart: { title: 'Weekly Bike Availability for '+BikeStation+' station'},
+          bars: 'vertical', //or 'horizontal'
+          axes: {
+            x: {
+              0: { side: 'top', label: 'Average Bikes Available'} // Top x-axis.
+            }
+          },
+        }
+
+        var chart = new google.charts.Bar(document.getElementById('chart_daily'));
+        chart.draw(data, options);
+      }
+
+//////////////////////////////////////////////////////////////////
+      function drawChart() {
+        alert("going into 2nd function");
+        var DATA = google.visualization.arrayToDataTable([
+          ['', 'Available Bikes'],
+          ['01:00', 30], ['02:00', 32], ['03:00', 35], ['04:00', 38],
+          ['05:00', 38], ['06:00', 36], ['07:00', 32], ['08:00', 25],
+          ['09:00', 12], ['10:00', 6], ['11:00', 14], ['12:00', 10],
+          ['13:00', 20], ['14:00', 24], ['15:00', 16], ['16:00', 14],
+          ['17:00', 10], ['18:00', 8], ['19:00', 1], ['20:00', 0],
+          ['21:00', 12], ['22:00', 15], ['23:00', 18], ['24:00', 28]
+        ]);
+
+        var OPTIONS = {
+          chart: {
+            title: 'Daily Bikes Availability'
+          }
+        };
+
+        var CHART = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        CHART.draw(DATA, OPTIONS);
+      }
+
+    </script>
+  </head>
+  <body>
+  <button onclick='drawChart();'>Select</button>
+    <button onclick='drawStuff();'>Select</button>
+
+    <div id="Graphs" display:'inline'>
+      <div id="chart_daily" style="width: 500px; height: 500px; float:left"></div>
+      <div id="columnchart_material" style="width: 900px; height: 500px; float:right"></div>
+  </body>
+  </body>
+</html>
