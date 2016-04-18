@@ -29,8 +29,9 @@ when a user is trying to rent the bicycle.
 ----------------
 The Biking Dublin application is intended for users to get real time information regarding
 bikes availability for hiring and returning at various bike stations throughout Dublin city.
-The application also offers historical data regarding bikes availability based on stations,
-daily and hourly.
+The application also offers historical data regarding daily and hourly bikes availability 
+based on stations.
+
  * For a full description of the module, visit the project page:
    https://github.com/DucarrougeR/DublinBikes
 
@@ -44,8 +45,10 @@ This module requires the following modules:
 
  * Python 3.X 
 		https://www.python.org/downloads/
- * Pandas 0.18 library for Pyton
-		https://pypi.python.org/pypi/pandas/0.18.0/#downloads
+ * Pandas library for Pyton
+		https://pypi.python.org/pypi/pandas/
+ * D3 library for Javascript to produce dynamic, interactive visualization graphs
+		https://d3js.org/
  * Flask framework.
 		https://pypi.python.org/pypi/Flask
  * SQLite to connect the web application to the database
@@ -56,66 +59,62 @@ This module requires the following modules:
 
  * Python 3.5
 		https://www.python.org/downloads/release/python-350/
- 
+ * Pandas 0.18 library for Pyton
+		https://pypi.python.org/pypi/pandas/0.18.0/#downloads
  
 ==INSTALLATION==
 ----------------
- * Once all the required modules are installed on the computer, you may launch the html file which
+ * 	Once all the required modules are installed on the computer, you may launch the html file which
 	will integrate with the SQL database using the Flask framework to fetch the data based on user input.
 
- * You may want to disable Toolbar module, since its output clashes with
-   Administration Menu.
+ * 	You may want to change the source code on the webpage (html, javascript files) if you would prefer to run 
+	visualization using the pandas library to generate static graphs. Otherwise, keep the D3 library as the 
+	default setup to allow for intercative graphs to be displayed.
  
  
 ==CONFIGURATION==
 -----------------
- * Configure user permissions in Administration » People » Permissions:
+ * 	The website application is designed to function without the need for configuration.
 
-   - Use the administration pages and help (System module)
+ * 	Select the stations in th drop down menu in order to get the information for the specific station.
+	Additional information can be requested by selectin g a particular day in order to access the 
+	availability for the bike station on a hourly basis.
 
-     The top-level administration categories require this permission to be
-     accessible. The administration menu will be empty unless this permission
-     is granted.
-
-   - Access administration menu
-
-     Users in roles with the "Access administration menu" permission will see
-     the administration menu at the top of each page.
-
-   - Display Drupal links
-
-     Users in roles with the "Display drupal links" permission will receive
-     links to drupal.org issue queues for all enabled contributed modules. The
-     issue queue links appear under the administration menu icon.
-
- * Customize the menu settings in Administration » Configuration and modules »
-   Administration » Administration menu.
-
- * To prevent administrative menu items from appearing twice, you may hide the
-   "Management" menu block.
+ * 	The graph displayed is interactive and displays the numbr of bikes when the mouse hovers above the 
+	graph to offer more complete information.
  
  
 ==TROUBLESHOOTING==
 -------------------
  * If the menu does not display, check the following:
 
-   - Are the "Access administration menu" and "Use the administration pages
-     and help" permissions enabled for the appropriate roles?
+   - the HTML file is in the same folder as the CSS file and the Python File and SQLITE databases
 
-   - Does html.tpl.php of your theme output the $page_bottom variable?
+   - is your browser older than: 
+		Internet Explorer 7? 
+		Firefox 43? 
+		Safari 9.1? 
+		Chrome 48?
 
-FAQ
----
+==FAQ==
+-------
 
-Q: I enabled "Aggregate and compress CSS files", but admin_menu.css is still
-   there. Is this normal?
+Q: 	Why are there three colors for the circles on the map?
 
-A: Yes, this is the intended behavior. the administration menu module only loads
-   its stylesheet as needed (i.e., on page requests by logged-on, administrative
-   users).
+A: 	Each circle represents a unique bike station. The color of that circle represents its
+	current bike availability status. 
+	-Red Color: the station has less than 25% of the bikes available for hire.
+	-Orange Color: the station has between 25% and 75% of bikes available for hire.
+	-Green Color: the station has over 75% of the bikes available for hire.
+ ----------------------------------------------------------------------------------------------------------
+ Q:	What is the difference between the twp graphs on the page?
  
+ A:	The first graph (on the right side of the page) reflects the average occupancy on an hourly basis for a 
+	specific day chosen. The second graph (on the left side of the page) indicates the average occupancy of 
+	the station on a daily basis for a week.
+ ----------------------------------------------------------------------------------------------------------
+ Q:	
  
- 
- 
+ A:	
  
  
