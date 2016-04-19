@@ -6,8 +6,6 @@ Biking Dublin
  alt="Biking Dublin" title="BikingDublin" align="right" />
 Contributors: Brendan Dwyer, Michael McNulty, Romain Ducarrouge  
  
-
-<<<<<<< HEAD
 This program was designed to collect dynamic data from the JCDecaux API about Dublin City Bikes
 usage on a daily basis. The data collection was processed on an Amazon Web Service instance, EC2, 
 and the data was saved to a SQLite database.  
@@ -18,7 +16,7 @@ This program is intended to collect dynamic data from the JCDecaux API about Dub
 usage on a daily basis. 
 This is used to predict which bike stations and at which times are likely to have available bikes 
 when a user is trying to rent or return a bicycle.
->>>>>>> origin/master
+
 
 
 CONTENTS OF THIS FILE
