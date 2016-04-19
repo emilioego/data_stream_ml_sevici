@@ -7,11 +7,18 @@ Biking Dublin
 Contributors: Brendan Dwyer, Michael McNulty, Romain Ducarrouge  
  
 
+<<<<<<< HEAD
 This program was designed to collect dynamic data from the JCDecaux API about Dublin City Bikes
 usage on a daily basis. The data collection was processed on an Amazon Web Service instance, EC2, 
 and the data was saved to a SQLite database.  
 This is used to predict which time and which bike stations are likely to have available bikes 
 when a user is trying to rent or return the bicycle.
+=======
+This program is intended to collect dynamic data from the JCDecaux API about Dublin City Bikes
+usage on a daily basis. 
+This is used to predict which bike stations and at which times are likely to have available bikes 
+when a user is trying to rent or return a bicycle.
+>>>>>>> origin/master
 
 
 CONTENTS OF THIS FILE
@@ -31,7 +38,7 @@ INTRODUCTION
 -----------------
 The 'Biking Dublin' application is intended for users to get real time information regarding
 bikes availability for hiring and returning at various bike stations throughout Dublin city.
-The application also offers historical data regarding daily and hourly bikes availability 
+The application also offers historical data regarding the daily and hourly availability of bikes 
 based on stations.
 
  * For a full description of the module, visit the project page:
@@ -70,16 +77,16 @@ INSTALLATION
 
  * 	You may want to change the source code on the webpage (html, javascript files) if you would prefer to run 
 	visualization using the pandas library to generate static graphs. Otherwise, keep the Google Charts script 
-	as the default setup to allow for intercative graphs to be displayed.
+	as the default setup to allow for interactive graphs to be displayed.
  
  
 CONFIGURATION
 -----------------
  * 	The website application is designed to function without the need for configuration.
 
- * 	Select the stations in the drop down menu in order to get the information for the specific station.
+ * 	Select the stations in the drop down menu for information about a specific station.
 	Additional information can be requested by selecting a particular day in order to access the 
-	availability for the bike station on a hourly basis.
+	availability for the bike station on an hourly basis.
 
  * 	The graph displayed is interactive and displays the number of bikes when the mouse hovers above the 
 	graph to offer more complete information.
@@ -112,7 +119,7 @@ A: 	Each circle represents a unique bike station. The color of that circle repre
  
  A:	The first graph (on the left side of the page) indicates the average occupancy of the station on a 
 	daily basis for a week. The second graph (on the right side of the page) reflects the average occupancy 
-	on an hourly basis for a specific day chosen. 
+	on an hourly basis for the specific day chosen. 
  ----------------------------------------------------------------------------------------------------------
  Q:	
  
