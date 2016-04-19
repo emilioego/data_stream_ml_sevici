@@ -1,0 +1,87 @@
+html {
+    font-family: Arial;
+}
+
+
+body {}
+
+#container {
+    width:1024px;
+    margin:auto;
+}
+
+header {
+    height:80px;
+    background-color:#084C55;
+}
+
+#logo {
+    position:relative;
+    left:5px;
+}
+
+#station_select {
+    position:relative;
+    top:-35px;
+    color:white;
+    font-size:18px;
+    left:530px;
+}
+
+#more_info {
+    position:relative;
+    border-radius:5px;
+    background-color:#95BEC7;
+    top:5px;
+}
+#day_select {
+    width:100%;
+}
+#day_select input {
+    display:inline-block;
+    font-size:18px;
+    border:none;
+    width:120px;
+    padding:5px 0px;
+    margin:10px 0px;
+}
+
+#graph1 {
+    display:inline-block;
+    background-color:gray;
+}
+#graph2 {
+    display:inline-block;
+    background-color:gray;
+}
+h3 {
+    text-shadow:1px 1px white;
+    padding-top:15px;
+    font-weight:bold;
+    font-size:24px;
+    text-align:center;
+}
+
+#day_select {
+    text-align:center;
+}
+
+#day_select label {
+    display:inline-block;
+    padding:0px 20px;
+}
+
+#googleMap {
+    position:relative;
+    top:30px;
+    margin:auto;
+    border-radius:5px;
+    border:5px solid #084C55;
+    height:500px;
+    width:900px;
+}
+footer img {
+    width:100%;
+    margin-top:40px;
+    height:220px;
+}
