@@ -1,6 +1,6 @@
 
-==Plugin Name==
-
+Plugin Name
+-----------------
 Biking Dublin
 <img src="http://www.transportforireland.ie/assets/dublin-bikes2.png"
  alt="Biking Dublin" title="BikingDublin" align="right" />
@@ -13,8 +13,8 @@ This is used to predict which time and which bike stations are likely to have av
 when a user is trying to rent the bicycle.
 
 
-==CONTENTS OF THIS FILE==
--------------------------
+CONTENTS OF THIS FILE
+-----------------
    
  * Introduction
  * Requirements
@@ -26,8 +26,8 @@ when a user is trying to rent the bicycle.
  * Maintainers
 
  
-==INTRODUCTION==
-----------------
+INTRODUCTION
+-----------------
 The 'Biking Dublin' application is intended for users to get real time information regarding
 bikes availability for hiring and returning at various bike stations throughout Dublin city.
 The application also offers historical data regarding daily and hourly bikes availability 
@@ -40,30 +40,30 @@ based on stations.
    https://github.com/DucarrougeR/DublinBikes
  
  
-==REQUIREMENTS==
-----------------
+REQUIREMENTS
+-----------------
 This module requires the following modules:
 
  * Python 3.X 
 		https://www.python.org/downloads/
  * Pandas library for Pyton
 		https://pypi.python.org/pypi/pandas/
- * Flask framework.
+ * Flask framework version 0.10.1
 		https://pypi.python.org/pypi/Flask
  * SQLite to connect the web application to the database
 		https://www.sqlite.org/download.html
  
  
-==RECOMMENDED MODULES==
-
+RECOMMENDED MODULES
+--------------------
  * Python 3.5
 		https://www.python.org/downloads/release/python-350/
  * Pandas 0.18 library for Pyton
 		https://pypi.python.org/pypi/pandas/0.18.0/#downloads
  
  
-==INSTALLATION==
-----------------
+INSTALLATION
+-----------------
  * 	Once all the required modules are installed on the computer, you may launch the html file which
 	will integrate with the SQL database using the Flask framework to fetch the data based on user input.
 
@@ -72,7 +72,7 @@ This module requires the following modules:
 	as the default setup to allow for intercative graphs to be displayed.
  
  
-==CONFIGURATION==
+CONFIGURATION
 -----------------
  * 	The website application is designed to function without the need for configuration.
 
@@ -84,8 +84,8 @@ This module requires the following modules:
 	graph to offer more complete information.
  
  
-==TROUBLESHOOTING==
--------------------
+TROUBLESHOOTING
+-----------------
  * If the application does not display, check the following:
 
    - the HTML file is in the same folder as the CSS file and the Python File and SQLITE databases
@@ -96,8 +96,8 @@ This module requires the following modules:
 		Safari 9.1?   
 		Chrome 48?  
 
-==FAQ==
--------
+FAQ
+-----------------
 
 Q: 	Why are there three colors for the circles on the map?
 
