@@ -1,16 +1,17 @@
 
-Plugin Name
------------------
 Biking Dublin
+-----------------
+
 <img src="http://www.transportforireland.ie/assets/dublin-bikes2.png"
  alt="Biking Dublin" title="BikingDublin" align="right" />
 Contributors: Brendan Dwyer, Michael McNulty, Romain Ducarrouge  
  
 
-This program is intended to collect dynamic data from the JCDecaux API about Dublin City Bikes
-usage on a daily basis. 
+This program was designed to collect dynamic data from the JCDecaux API about Dublin City Bikes
+usage on a daily basis. The data collection was processed on an Amazon Web Service instance, EC2, 
+and the data was saved to a SQLite database.  
 This is used to predict which time and which bike stations are likely to have available bikes 
-when a user is trying to rent the bicycle.
+when a user is trying to rent or return the bicycle.
 
 
 CONTENTS OF THIS FILE
@@ -46,7 +47,7 @@ This module requires the following modules:
 
  * Python 3.X 
 		https://www.python.org/downloads/
- * Pandas library for Pyton
+ * Pandas library for Python
 		https://pypi.python.org/pypi/pandas/
  * Flask framework version 0.10.1
 		https://pypi.python.org/pypi/Flask
@@ -56,9 +57,9 @@ This module requires the following modules:
  
 RECOMMENDED MODULES
 --------------------
- * Python 3.5
+ * Python 3.5.0
 		https://www.python.org/downloads/release/python-350/
- * Pandas 0.18 library for Pyton
+ * Pandas 0.18 library for Python
 		https://pypi.python.org/pypi/pandas/0.18.0/#downloads
  
  
