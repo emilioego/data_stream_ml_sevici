@@ -77,11 +77,11 @@ INSTALLATION
  * 	Once all the required modules are installed on the computer, you may launch the html file which
 	will integrate with the SQL database using the Flask framework to fetch the data based on user input.
 
+![Alt text](/Documentation/Architecture.jpg?raw=true "Web App Architecture")
+	
  * 	You may want to change the source code on the webpage (html, javascript files) if you would prefer to run 
 	visualization using the pandas library to generate static graphs. Otherwise, keep the Google Charts script 
 	as the default setup to allow for interactive graphs to be displayed.
- 
- ![Alt text](/Documentation/Architecture.jpg?raw=true "Web App Architecture")
  
 CONFIGURATION
 -----------------
