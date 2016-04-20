@@ -4,14 +4,17 @@ Biking Dublin
 
 <img src="http://www.transportforireland.ie/assets/dublin-bikes2.png"
  alt="Biking Dublin" title="BikingDublin" align="right" />
-Contributors: Brendan Dwyer, Michael McNulty, Romain Ducarrouge  
+Contributors:  
+Brendan Dwyer,   
+Michael McNulty,   
+Romain Ducarrouge   
  
 This program was designed to collect dynamic data from the JCDecaux API about Dublin City Bikes
 usage on a daily basis. The data collection was processed on an Amazon Web Service instance, EC2, 
 and the data was saved to a SQLite database.  
 This is used to predict which time and which bike stations are likely to have available bikes 
 when a user is trying to rent or return the bicycle.
-=======
+
 This program is intended to collect dynamic data from the JCDecaux API about Dublin City Bikes
 usage on a daily basis. 
 This is used to predict which bike stations and at which times are likely to have available bikes 
@@ -29,7 +32,7 @@ CONTENTS OF THIS FILE
  * Configuration
  * Troubleshooting
  * FAQ
- * Maintainers
+ * License
 
  
 INTRODUCTION
@@ -45,6 +48,7 @@ based on stations.
  * To submit bug reports and feature suggestions, or to track changes:
    https://github.com/DucarrougeR/DublinBikes
  
+![Alt text](/Documentation/Process.jpg?raw=true "Data Collection Process")
  
 REQUIREMENTS
 -----------------
@@ -123,4 +127,22 @@ A: 	Each circle represents a unique bike station. The color of that circle repre
  
  A:	
  
- 
+ LICENSE
+-----------
+ The MIT License (MIT)
+
+Copyright (c) 2016 Nathan Epstein
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
+documentation files (the "Software"), to deal in the Software without restriction, including without limitation 
+the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, 
+and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions 
+of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED 
+TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF 
+CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+DEALINGS IN THE SOFTWARE.
