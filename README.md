@@ -81,6 +81,7 @@ INSTALLATION
 	visualization using the pandas library to generate static graphs. Otherwise, keep the Google Charts script 
 	as the default setup to allow for interactive graphs to be displayed.
  
+ ![Alt text](/Documentation/Architecture.jpg?raw=true "Web App Architecture")
  
 CONFIGURATION
 -----------------
