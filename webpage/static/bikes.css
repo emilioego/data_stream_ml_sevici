@@ -2,9 +2,6 @@ html {
     font-family: Arial;
 }
 
-
-body {}
-
 #container {
     width:1024px;
     margin:auto;
@@ -20,16 +17,41 @@ header {
     left:5px;
 }
 
+#goButton {
+	box-shadow:inset 0px 1px 1px 0px #ffffff;
+	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+	background-color:#f9f9f9;
+	border-radius:5px;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-size:18px;
+	font-weight:bold;
+	padding:5px 15px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #ffffff;
+}
+#goButton:hover {
+	background:linear-gradient(to bottom, #e9e9e9 15%, #f9f9f9 100%);
+	background-color:#e9e9e9;
+}
+
 #station_select {
     position:relative;
-    top:-35px;
+    top:-50px;
     color:white;
+    font-size:20px;
+    left:400px;
+}
+#stations {
     font-size:18px;
-    left:530px;
+    padding:5px 0px;
 }
 
 #more_info {
     position:relative;
+    width:90%;
+    margin:auto;
     border-radius:5px;
     background-color:#95BEC7;
     top:5px;
@@ -50,10 +72,12 @@ header {
     display:inline-block;
     background-color:gray;
 }
+
 #graph2 {
     display:inline-block;
     background-color:gray;
 }
+
 h3 {
     text-shadow:1px 1px white;
     padding-top:15px;
@@ -66,11 +90,6 @@ h3 {
     text-align:center;
 }
 
-#day_select label {
-    display:inline-block;
-    padding:0px 20px;
-}
-
 #googleMap {
     position:relative;
     top:30px;
@@ -80,8 +99,64 @@ h3 {
     height:500px;
     width:900px;
 }
+
 footer img {
+    position:absolute;
+    left:10px;
+    top:10px;
+    height:100px;
+    width:100px;
+}
+footer ul {
+    list-style:none;
+    position:absolute;
+    right:40px;
+    top:10px;
+    height:100px;
+    width:180px;
+    color:white;
+    font-size:18px;
+}
+
+footer p {
+    font-size:24px;
+    position:relative;
+    top:40px;
+    font-weight:bold;
+    text-align:center;
+    color:white;
+}
+footer {
+    height:120px;
     width:100%;
-    margin-top:40px;
-    height:220px;
+    position:relative;
+    top:60px;
+    background-color:#084C55;
+}
+
+.weekday {
+	box-shadow:inset 0px 1px 1px 0px #ffffff;
+	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+	background-color:#f9f9f9;
+	border-radius:5px;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-size:18px;
+	font-weight:bold;
+	padding:9px 44px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #ffffff;
+}
+
+.weekday:hover {
+	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+	background-color:#e9e9e9;
+}
+
+#chart_daily {
+    margin-top:20px;
+}
+#columnchart_material {
+    margin-top:20px;
 }

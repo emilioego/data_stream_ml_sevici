@@ -52,7 +52,6 @@ google.charts.load('current', {'packages':['bar']});
                     <option value="14">Fownes Street Upper</option>
                     <option value="73">Francis Street</option>
                     <option value="98">Frederick Street South</option>
-                    <option value="16">Georges Quay</option>
                     <option value="17">Golden Lane</option>
                     <option value="69">Grand Canal Dock</option>
                     <option value="18">Grantham Street</option>
@@ -123,7 +122,7 @@ google.charts.load('current', {'packages':['bar']});
                     <option value="52">York Street East</option>
                     <option value="51">York Street West</option>
                 </select>
-                <input type="button" value="Go!" onclick="toggleInfo();"></input>
+                <input id="goButton" type="button" value="Go!" onclick="toggleInfo();"></input>
             </form>
 
         </header> <!-- End of header -->
@@ -133,13 +132,13 @@ google.charts.load('current', {'packages':['bar']});
             <h3 id="station_title">Station Name</h3>
 
             <div id="day_select"> <!-- Buttons to toggle what day information is displayed for -->
-                <input type="button" name="toggle" value="Monday" onclick="drawChart('Monday');">
-                <input type="button" name="toggle" value="Tuesday" onclick="drawChart('Tuesday');">
-                <input type="button" name="toggle" value="Wednesday" onclick="drawChart('Wednesday');">
-                <input type="button" name="toggle" value="Thursday" onclick="drawChart('Thursday');">
-                <input type="button" name="toggle" value="Friday" onclick="drawChart('Friday');">
-                <input type="button" name="toggle" value="Saturday" onclick="drawChart('Saturday');"></label>
-                <input type="button" name="toggle" value="Sunday" onclick="drawChart('Sunday');">
+                <input class="weekday" type="button" name="toggle" value="Monday" onclick="drawChart('Monday');">
+                <input class="weekday" type="button" name="toggle" value="Tuesday" onclick="drawChart('Tuesday');">
+                <input class="weekday" type="button" name="toggle" value="Wednesday" onclick="drawChart('Wednesday');">
+                <input class="weekday" type="button" name="toggle" value="Thursday" onclick="drawChart('Thursday');">
+                <input class="weekday" type="button" name="toggle" value="Friday" onclick="drawChart('Friday');">
+                <input class="weekday" type="button" name="toggle" value="Saturday" onclick="drawChart('Saturday');"></label>
+                <input class="weekday" type="button" name="toggle" value="Sunday" onclick="drawChart('Sunday');">
             </div> <!-- End of day select -->
 
                 <div id="chart_daily" style="float:left"></div>
@@ -151,7 +150,9 @@ google.charts.load('current', {'packages':['bar']});
         </div>
 
         <footer>
-            <img src="{{url_for('static', filename='footer.png')}}"/>
+            <img src="{{url_for('static', filename='logo.gif')}}"/>
+            <p>Software Engineering COMP30670</p>
+            <ul><li>Brendan Dwyer</li><li>Michael McNulty</li><li>Romain Ducarrouge</li></ul>
         </footer>
 
     </div> <!-- End of container -->

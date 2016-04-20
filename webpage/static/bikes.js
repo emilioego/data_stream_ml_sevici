@@ -25,6 +25,7 @@ function initialize() {
 
                 // Style the circle/infowindow for each station
                 for (i=0;i<101;i++) {
+                    if (data[i].number==16) {continue;}
                     var color;
                     // Set color based on the percentage of bike spaces available 
                     if (data[i].available_bikes/data[i].bike_stands < 0.25) {
@@ -36,7 +37,7 @@ function initialize() {
                     };
                      
                     // Properties for map circles
-                    var circle = new google.maps.Circle({
+                    circle = new google.maps.Circle({
                         strokeColor: color,
                         strokeOpacity: '0.8',
                         strokeWeight: 0,
@@ -45,12 +46,12 @@ function initialize() {
                         map: map,
                         radius: 150,
                         clickable:true,
-                        center: {lat: data[i].position.lat, lng: data[i].position.lng}
+                        center: {lat: data[i].position.lat, lng: data[i].position.lng},
                     });
 
                     // Create information to display in infoWindow
                     // Add a link that takes the user to that location on the Google Maps main page
-                    var displayInfo = "<h3>" + data[i].address + "</h3><span style=\"text-align:center;font-size:20px;color:navy;\">Bikes Available: " + data[i].available_bikes + "</br>Bike Stands Free: " + data[i].available_bike_stands+"</span></br></br><a style=\"font-size:16px;text-align:center;\" href=\"http://maps.google.com/maps?q="+data[i].position.lat+","+data[i].position.lng+"\" target=\"_blank\">View full map in new tab</a></span>";
+                    var displayInfo = "<h3 style=\"margin:2px;\">" + data[i].address + "</h3><span style=\"text-align:center;font-size:20px;color:navy;\">Bikes Available: " + data[i].available_bikes + "</br>Bike Stands Free: " + data[i].available_bike_stands+"</span></br></br><a style=\"font-size:16px;text-align:center;\" href=\"http://maps.google.com/maps?q="+data[i].position.lat+","+data[i].position.lng+"\" target=\"_blank\">View full map in new tab</a></span>";
 
 
                     // Generate infoWindow
@@ -74,17 +75,17 @@ function initialize() {
 }
 
 // Create a clickable circle
-function makeClickable(map, circle, info) {
-    var infowindow = new google.maps.InfoWindow({
-        content: info
-    });
-
-    // Display information on click
-    google.maps.event.addListener(circle, 'click', function(ev) {
-        infowindow.setPosition(circle.getCenter());
-        infowindow.open(map);
-    });
-}
+ function makeClickable(map, circle, info) {
+     var infowindow = new google.maps.InfoWindow({
+         content: info
+     });
+ 
+     // Display information on click
+     google.maps.event.addListener(circle, 'click', function(ev) {
+         infowindow.setPosition(circle.getCenter());
+         infowindow.open(map);
+     });
+ }
 
 /////////////////////////////////////////////////////////////////////
 /////////////      HISTORICAL DATA AND GRAPHS      //////////////////
@@ -141,6 +142,12 @@ function drawStuff() {
                     0: { side: 'left', label: 'Average Number of Bikes Available'} // Top x-axis.
                 }
             },
+            chartArea: {
+                backgroundColor: {
+                    stroke:"green",
+                    strokeWidth:2
+                }
+            }
         }
 
         // Select the HTML div element to display the chart in, and draw it
@@ -153,9 +160,9 @@ function drawStuff() {
 function drawChart(x) {
     // Take in a day as the argument, and pass that to the url to activate the appropriate
     // database query via flask
+
     var path = '/daily/'+document.getElementById("stations").value+'/'+x;
     var xmlhttp = new XMLHttpRequest();
-
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             // Parse the JSON response
