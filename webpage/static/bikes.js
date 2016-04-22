@@ -25,6 +25,7 @@ function initialize() {
 
                 // Style the circle/infowindow for each station
                 for (i=0;i<101;i++) {
+                    // Georges Quay station has closed, so do not gather data for station 16
                     if (data[i].number==16) {continue;}
                     var color;
                     // Set color based on the percentage of bike spaces available 
@@ -50,6 +51,7 @@ function initialize() {
                     });
 
                     // Create information to display in infoWindow
+                    // Infowindow contents created as a string including HTML tags for formatting
                     // Add a link that takes the user to that location on the Google Maps main page
                     var displayInfo = "<h3 style=\"margin:2px;\">" + data[i].address + "</h3><span style=\"text-align:center;font-size:20px;color:navy;\">Bikes Available: " + data[i].available_bikes + "</br>Bike Stands Free: " + data[i].available_bike_stands+"</span></br></br><a style=\"font-size:16px;text-align:center;\" href=\"http://maps.google.com/maps?q="+data[i].position.lat+","+data[i].position.lng+"\" target=\"_blank\">View full map in new tab</a></span>";
 
@@ -57,6 +59,7 @@ function initialize() {
                     // Generate infoWindow
                     makeClickable(map, circle, displayInfo);
                     
+                    // OPTIONAL
                     /*
                     --------INSERT MARKERS RATHER THAN CIRCLES-------
 
@@ -107,6 +110,7 @@ function toggleInfo() {
             if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                 // Parse the JSON response
                 weekly_json_data = JSON.parse(xmlhttp.responseText);
+                // Draw the graph
                 drawStuff();
             }
         }
@@ -140,12 +144,6 @@ function drawStuff() {
             axes: {
                 y: {
                     0: { side: 'left', label: 'Average Number of Bikes Available'} // Top x-axis.
-                }
-            },
-            chartArea: {
-                backgroundColor: {
-                    stroke:"green",
-                    strokeWidth:2
                 }
             }
         }
@@ -209,7 +207,7 @@ function drawChart(x) {
                     y: {
                         0: { side: 'left', label: 'Average Number of Bikes Available'} // Top x-axis.
                     }
-                },
+                }
             };
             // Select the HTML div element to display the chart, and draw the chart
             var CHART = new google.charts.Bar(document.getElementById('columnchart_material'));

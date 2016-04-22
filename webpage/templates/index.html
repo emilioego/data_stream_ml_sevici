@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="utf-8">
-<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='bikes.css')}}"/>
-<script type="text/javascript" src="{{url_for('static', filename='bikes.js')}}"></script>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='bikes.css')}}"/><!-- CSS -->
+<script type="text/javascript" src="{{url_for('static', filename='bikes.js')}}"></script><!-- Load Javascript file -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script><!-- Scripts for Google Charts -->
 <script type="text/javascript">
 google.charts.load('current', {'packages':['bar']});
 </script>
@@ -18,6 +18,9 @@ google.charts.load('current', {'packages':['bar']});
 
             <div id="logo"><a href="#"><img src="{{url_for('static', filename='logo.png')}}" alt="Dublin Bikes Logo" style="height:80px;width:150px;"/></a></div>
 
+            <!-- Dropdown selection for each station.
+                'value' field contains the 'number' attribute as found in the database, so that it
+                may passed into a sqlite query -->
             <form id="station_select">
                 <label for="stations">Get detailed information for: </label>
                 <select id = "stations" name="stations">
@@ -129,7 +132,7 @@ google.charts.load('current', {'packages':['bar']});
 
         <div id="more_info" style="display:none"> <!-- Expandable to display detailed information on selected station including graphs etc. -->
 
-            <h3 id="station_title">Station Name</h3>
+            <h3 id="station_title">Station Name</h3><!-- innerHTML here will be changed at beginning of "toggleInfo()" function-->
 
             <div id="day_select"> <!-- Buttons to toggle what day information is displayed for -->
                 <input class="weekday" type="button" name="toggle" value="Monday" onclick="drawChart('Monday');">
@@ -141,10 +144,12 @@ google.charts.load('current', {'packages':['bar']});
                 <input class="weekday" type="button" name="toggle" value="Sunday" onclick="drawChart('Sunday');">
             </div> <!-- End of day select -->
 
+            <!-- divs that are initially empty, and will be used to house the graphs generated -->
                 <div id="chart_daily" style="float:left"></div>
                 <div id="columnchart_material" style="float:right"></div>
 
         </div> <!-- End of more info -->
+
         <div id="googleMap">
             <!-- div to contain Google map displaying all stations, their capacity, and the number of bikes available (at time of page load) -->
         </div>

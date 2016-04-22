@@ -1,6 +1,5 @@
-from flask import Flask, render_template, g, jsonify
+from flask import Flask, render_template, g
 import json
-import pandas as pd
 import sqlite3
 
 # Static files are served from '/static' directory
@@ -8,6 +7,7 @@ app = Flask(__name__, static_url_path='')
 app.config.from_object('config')
 
 # Connect to database using config.py file
+# This contains API key and name of our database file
 def db_connect():
     return sqlite3.connect(app.config["DATABASE"])
 
