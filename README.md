@@ -15,12 +15,6 @@ and the data was saved to a SQLite database.
 This is used to predict which time and which bike stations are likely to have available bikes 
 when a user is trying to rent or return the bicycle.
 
-This program is intended to collect dynamic data from the JCDecaux API about Dublin City Bikes
-usage on a daily basis. 
-This is used to predict which bike stations and at which times are likely to have available bikes 
-when a user is trying to rent or return a bicycle.
-
-
 
 CONTENTS OF THIS FILE
 -----------------
@@ -124,15 +118,12 @@ A: 	Each circle represents a unique bike station. The color of that circle repre
 	daily basis for a week. The second graph (on the right side of the page) reflects the average occupancy 
 	on an hourly basis for the specific day chosen. 
  ----------------------------------------------------------------------------------------------------------
- Q:	
+
  
- A:	
  
  LICENSE
 -----------
  The MIT License (MIT)
-
-Copyright (c) 2016 Nathan Epstein
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated 
 documentation files (the "Software"), to deal in the Software without restriction, including without limitation 
