@@ -2,7 +2,7 @@
 function initialize() {
     // Define properties of the map
     var mapOptions = {
-        center:new google.maps.LatLng(53.344007,-6.266802),
+        center:new google.maps.LatLng(37.3750091,-5.9979764),
         zoom:13,
         mapTypeId:google.maps.MapTypeId.ROADMAP,
         scrollwheel:false
@@ -12,9 +12,10 @@ function initialize() {
     var map=new google.maps.Map(document.getElementById("googleMap"),mapOptions);
 
     // Information for API call
-    var NAME="Dublin";
-    var APIKEY="1c8d24323042b11c89877648adfe3c180f15fa3c";
+    var NAME="seville";
+    var APIKEY="2513ba8c201960d6193114b29d9be3e78dfce408";
     var url="https://api.jcdecaux.com/vls/v1/stations?contract=" + NAME + "&apiKey=" + APIKEY;
+	
 
     // During initialization gather JSON data with station coordinates and add markers/circles
     var xmlhttp = new XMLHttpRequest();
