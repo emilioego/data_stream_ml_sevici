@@ -81,9 +81,6 @@ target/
 profile_default/
 ipython_config.py
 
-# Ipynb
-.ipynb_checkpoints
-
 # pyenv
 .python-version
 bin/
