@@ -5,16 +5,16 @@ import traceback
 import time
 
 # Setting up
-NAME = "Dublin"
+NAME = "seville"
 STATIONS = "https://api.jcdecaux.com/vls/v1/stations"
-APIKEY = "1c8d24323042b11c89877648adfe3c180f15fa3c"
+APIKEY = "2513ba8c201960d6193114b29d9be3e78dfce408"
     
-conn = sqlite3.connect("dublinBikes.db") # Connect to database (creates if it does not exist)
+conn = sqlite3.connect("seviBikes.db") # Connect to database (creates if it does not exist)
 cursor = conn.cursor()
 
 # Create a new table in the current database
 # Specify column names and data types
-cursor.execute("CREATE TABLE IF NOT EXISTS dublinBikes (address text, available_bike_stands integer, available_bikes integer, banking integer, bike_stands integer, bonus integer, contract_name text, last_update integer, name text, number integer, position_lat real, position_lng real, status text)")
+cursor.execute("CREATE TABLE IF NOT EXISTS seviBikes (address text, available_bike_stands integer, available_bikes integer, banking integer, bike_stands integer, bonus integer, contract_name text, last_update integer, name text, number integer, position_lat real, position_lng real, status text)")
 conn.commit() # Save the changes
 
 def add_to_database(dataframe):
@@ -29,7 +29,7 @@ def add_to_database(dataframe):
         elements = [data.get("address"), int(data.get("available_bike_stands")), int(data.get("available_bikes")), int(data.get("banking")), int(data.get("bike_stands")), int(data.get("bonus")), data.get("contract_name"), float(data.get("last_update")), data.get("name"), int(data.get("number")), data.get("position").get("lat"), data.get("position").get("lng"), data.get("status")]
         
         # Add each of these elements to the table in our database
-        cursor.execute("INSERT INTO dublinBikes VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)", elements)
+        cursor.execute("INSERT INTO seviBikes VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)", elements)
     conn.commit()
     
 # Always run
