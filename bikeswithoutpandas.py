@@ -6,7 +6,7 @@ import time
 # Setting up
 NAME = "Dublin"
 STATIONS = "https://api.jcdecaux.com/vls/v1/stations"
-APIKEY = "1c8d24323042b11c89877648adfe3c180f15fa3c"
+APIKEY = "2513ba8c201960d6193114b29d9be3e78dfce408"
 
 r = requests.get("https://api.jcdecaux.com/vls/v1/stations?contract=" + NAME + "&apiKey=" + APIKEY)
 
