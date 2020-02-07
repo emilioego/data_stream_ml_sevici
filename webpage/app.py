@@ -46,7 +46,7 @@ def get_hourly_info(number, weekday):
     con=get_db()
     cur=con.cursor()
     cur.execute("SELECT AVG(available_bikes), hour FROM seviBikes \
-            WHERE number = {} AND day = \"{}\" GROUP BY hour".format(number, weekday))
+            WHERE number = {} GROUP BY hour".format(number, weekday))
     data=cur.fetchall()
     return json.dumps(data)
 
