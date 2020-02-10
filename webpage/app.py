@@ -9,7 +9,8 @@ app.config.from_object('config')
 # Connect to database using config.py file
 # This contains API key and name of our database file
 def db_connect():
-    return sqlite3.connect(app.config["DATABASE"])
+    database = "../"+app.config["DATABASE"]
+    return sqlite3.connect(database)
 
 def get_db():
     db = getattr(g, '_database', None)
@@ -26,7 +27,12 @@ def close_connection(exception):
 # This route serves '/static/bikes.html'
 @app.route('/')
 def begin():
+    #con=get_db()
+    #cur=con.cursor()
+    #cur.execute("SELECT name,number FROM seviBikes")
+    #data=cur.fetchall()
     return render_template('index.html', MAPS_APIKEY = app.config["MAPS_APIKEY"])
+                           #res = data)
 
 # Function to return the average number of available bikes each day during the week for
 # a specified station
@@ -34,8 +40,7 @@ def begin():
 def get_weekly_info(number):
     con=get_db()
     cur=con.cursor()
-    cur.execute("SELECT day, AVG(available_bikes) FROM seviBikes \
-            WHERE number = {} GROUP BY day".format(number))
+    cur.execute("SELECT day, AVG(available_bikes) FROM seviBikes WHERE number = {} GROUP BY day".format(number))
     data=cur.fetchall()
     # Return as JSON so that it may be parsed and accessed as required to generate graphs on the page
     return json.dumps(data)
