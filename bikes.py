@@ -3,6 +3,7 @@ import pandas as pd
 import sqlite3
 import traceback
 import time
+import datetime
 
 # Setting up
 NAME = "seville"
@@ -14,7 +15,7 @@ cursor = conn.cursor()
 
 # Create a new table in the current database
 # Specify column names and data types
-cursor.execute("CREATE TABLE IF NOT EXISTS seviBikes (address text, available_bike_stands integer, available_bikes integer, banking integer, bike_stands integer, bonus integer, contract_name text, last_update integer, name text, number integer, position_lat real, position_lng real, status text)")
+cursor.execute("CREATE TABLE IF NOT EXISTS seviBikes (address text, available_bike_stands integer, available_bikes integer, banking integer, bike_stands integer, bonus integer, contract_name text, last_update integer, name text, number integer, position_lat real, position_lng real, status text,day varchar(10), date_time varchar(15),hour varchar(5))")
 conn.commit() # Save the changes
 
 def add_to_database(dataframe):
@@ -24,12 +25,14 @@ def add_to_database(dataframe):
     # So using the first value returned, we can cycle through each row in the dataframe (where each row has information on a specific station)
     for i in range(0, (dataframe.shape[0]-1)):
         data = dataframe.iloc[i] # df.iloc[] just allows us to access elements via normal indexing of a pandas dataframe
-        
+        date_time = pd.to_datetime(data["last_update"]/1000,unit='s')
+        day = str(date_time.day_name())
+        hour = str(date_time.hour)
         # Store all the information from the dataframe in a list
-        elements = [data.get("address"), int(data.get("available_bike_stands")), int(data.get("available_bikes")), int(data.get("banking")), int(data.get("bike_stands")), int(data.get("bonus")), data.get("contract_name"), float(data.get("last_update")), data.get("name"), int(data.get("number")), data.get("position").get("lat"), data.get("position").get("lng"), data.get("status")]
+        elements = [data.get("address"), int(data.get("available_bike_stands")), int(data.get("available_bikes")), int(data.get("banking")), int(data.get("bike_stands")), int(data.get("bonus")), data.get("contract_name"), float(data.get("last_update")), data.get("name"), int(data.get("number")), data.get("position").get("lat"), data.get("position").get("lng"), data.get("status"),day,str(date_time),str(hour)]
         
         # Add each of these elements to the table in our database
-        cursor.execute("INSERT INTO seviBikes VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)", elements)
+        cursor.execute("INSERT INTO seviBikes VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", elements)
     conn.commit()
     
 # Always run
@@ -42,9 +45,9 @@ while True:
 
         # Add the information to the database
         add_to_database(df)
-
+        print("Insert")
         # Sleep for 5 minutes
-        time.sleep(15)
+        time.sleep(300)
 
     except:
         # Print traceback if there is an error
