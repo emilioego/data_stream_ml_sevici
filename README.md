@@ -1,17 +1,17 @@
 
-Biking Dublin
+Biking Seville
 -----------------
 
-<img src="http://www.transportforireland.ie/assets/dublin-bikes2.png"
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTKj4fPzPujSAxdx6mq6YG8xJQ-iUwoFyxxAvC-cLkbEuXKutHz"
  alt="Biking Dublin" title="BikingDublin" align="right" />
 Contributors:  
 Brendan Dwyer,   
 Michael McNulty,   
 Romain Ducarrouge   
  
-This program was designed to collect dynamic data from the JCDecaux API about Dublin City Bikes
-usage on a daily basis. The data collection was processed on an Amazon Web Service instance, EC2, 
-and the data was saved to a SQLite database.  
+This program was designed to collect dynamic data from the JCDecaux API about Seville City Bikes
+usage on a daily basis. The data collection was processed on an laptop locally and the data was 
+saved to a SQLite database.  
 This is used to predict which time and which bike stations are likely to have available bikes 
 when a user is trying to rent or return the bicycle.
 
@@ -31,18 +31,11 @@ CONTENTS OF THIS FILE
  
 INTRODUCTION
 -----------------
-The 'Biking Dublin' application is intended for users to get real time information regarding
-bikes availability for hiring and returning at various bike stations throughout Dublin city.
+The 'Biking Seville' application is intended for users to get real time information regarding
+bikes availability for hiring and returning at various bike stations throughout Seville city.
 The application also offers historical data regarding the daily and hourly availability of bikes 
 based on stations.
 
- * For a full description of the module, visit the project page:
-   https://github.com/DucarrougeR/DublinBikes
-
- * To submit bug reports and feature suggestions, or to track changes:
-   https://github.com/DucarrougeR/DublinBikes
- 
-![Alt text](/Documentation/Process.jpg?raw=true "Data Collection Process")
  
 REQUIREMENTS
 -----------------
@@ -88,18 +81,7 @@ CONFIGURATION
  * 	The graph displayed is interactive and displays the number of bikes when the mouse hovers above the 
 	graph to offer more complete information.
  
- 
-TROUBLESHOOTING
------------------
- * If the application does not display, check the following:
 
-   - the HTML file is in the same folder as the CSS file and the Python File and SQLITE databases
-
-   - is your browser older than:   
-		Internet Explorer 7?   
-		Firefox 43?   
-		Safari 9.1?   
-		Chrome 48?  
 
 FAQ
 -----------------
@@ -111,12 +93,6 @@ A: 	Each circle represents a unique bike station. The color of that circle repre
 	-Red Color: the station has less than 25% of the bikes available for hire.  
 	-Orange Color: the station has between 25% and 75% of bikes available for hire.  
 	-Green Color: the station has over 75% of the bikes available for hire.  
- ----------------------------------------------------------------------------------------------------------
- Q:	What is the difference between the two graphs on the page?
- 
- A:	The first graph (on the left side of the page) indicates the average occupancy of the station on a 
-	daily basis for a week. The second graph (on the right side of the page) reflects the average occupancy 
-	on an hourly basis for the specific day chosen. 
  ----------------------------------------------------------------------------------------------------------
 
  
