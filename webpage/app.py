@@ -27,12 +27,16 @@ def close_connection(exception):
 # This route serves '/static/bikes.html'
 @app.route('/')
 def begin():
-    #con=get_db()
-    #cur=con.cursor()
-    #cur.execute("SELECT name,number FROM seviBikes")
-    #data=cur.fetchall()
-    return render_template('index.html', MAPS_APIKEY = app.config["MAPS_APIKEY"])
-                           #res = data)
+    names=[]
+    numbers=[]
+    con=get_db()
+    cur=con.cursor()
+    cur.execute("SELECT DISTINCT address,number FROM seviBikes")
+    data=cur.fetchall()
+    for row in data:
+        names.append(row[0])
+        numbers.append(row[1])
+    return render_template('index.html', MAPS_APIKEY = app.config["MAPS_APIKEY"],len = len(data),names = names,numbers=numbers)
 
 # Function to return the average number of available bikes each day during the week for
 # a specified station

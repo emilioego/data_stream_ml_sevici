@@ -124,7 +124,7 @@ function toggleInfo() {
 function drawStuff() {
     // Create a new Google Chart
     var data = new google.visualization.arrayToDataTable([
-        ['Day', 'Available Bikes'],
+      ['Day', 'Available Bikes'],
         ['Mon', weekly_json_data[1][1]],
         ['Tues', weekly_json_data[5][1]],
         ['Wed', weekly_json_data[6][1]],

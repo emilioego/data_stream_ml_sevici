@@ -22,10 +22,12 @@ google.charts.load('current', {'packages':['bar']});
                 'value' field contains the 'number' attribute as found in the database, so that it
                 may passed into a sqlite query -->
             <form id="station_select">
+			
                 <label for="stations">Obtener información para: </label>
                 <select id = "stations" name="stations">
-                    <option value="126">AVENIDA REINA MERCEDES</option>
-                   
+				{%for i in range(0, len)%} 
+					<option value="{{numbers[i]}}">{{names[i]}}</option>
+				{%endfor%} 
                 </select>
                 <input id="goButton" type="button" value="Go!" onclick="toggleInfo();"></input>
             </form>
