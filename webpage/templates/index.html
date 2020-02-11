@@ -23,10 +23,11 @@ google.charts.load('current', {'packages':['bar']});
                 may passed into a sqlite query -->
             <form id="station_select">
 			
-                <label for="stations">Obtener información para: </label>
+                <label for="stations"> Obtener información para: </label>
                 <select id = "stations" name="stations">
 				{%for i in range(0, len)%} 
-					<option value="{{numbers[i]}}">{{names[i]}}</option>
+				     {% set res = names[i] | truncate(40)  %}
+					<option value="{{numbers[i]}}" title="{{names[i]}}">{{res}}</option>
 				{%endfor%} 
                 </select>
                 <input id="goButton" type="button" value="Go!" onclick="toggleInfo();"></input>
