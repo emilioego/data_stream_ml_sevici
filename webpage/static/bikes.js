@@ -30,7 +30,9 @@ function initialize() {
                     if (data[i].number==16) {continue;}
                     var color;
                     // Set color based on the percentage of bike spaces available 
-                    if (data[i].available_bikes/data[i].bike_stands < 0.25) {
+                    if (data[i].available_bikes/data[i].bike_stands == 0.00) {
+                        color = 'black';
+                    } else if (data[i].available_bikes/data[i].bike_stands < 0.25) {
                         color = 'red';
                     } else if (data[i].available_bikes/data[i].bike_stands > 0.75) {
                         color = 'green';
