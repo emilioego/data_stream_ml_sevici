@@ -44,7 +44,8 @@ def begin():
 def get_weekly_info(number):
     con=get_db()
     cur=con.cursor()
-    cur.execute("SELECT day, AVG(available_bikes) FROM seviBikes WHERE number = {} GROUP BY day".format(number))
+    cur.execute("SELECT day, AVG(available_bikes) FROM seviBikes \
+            WHERE number = {} GROUP BY day".format(number))
     data=cur.fetchall()
     # Return as JSON so that it may be parsed and accessed as required to generate graphs on the page
     return json.dumps(data)
@@ -55,7 +56,7 @@ def get_hourly_info(number, weekday):
     con=get_db()
     cur=con.cursor()
     cur.execute("SELECT AVG(available_bikes), hour FROM seviBikes \
-            WHERE number = {} GROUP BY hour".format(number, weekday))
+            WHERE number = {} AND day = \"{}\" GROUP BY hour".format(number, weekday))
     data=cur.fetchall()
     return json.dumps(data)
 

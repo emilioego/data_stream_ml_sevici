@@ -122,17 +122,14 @@ function toggleInfo() {
 ///////////////////////////////////////////////////////////////////////
 
 function drawStuff() {
+
+    var arr = [['Day', 'Available Bikes']];
+    for (let i = 0; i < weekly_json_data.length; i++) {
+        var arr2 = [weekly_json_data[i][0],weekly_json_data[i][1]];
+        arr.push(arr2);
+      }
     // Create a new Google Chart
-    var data = new google.visualization.arrayToDataTable([
-      ['Day', 'Available Bikes'],
-        ['Mon', weekly_json_data[1][1]],
-        ['Tues', weekly_json_data[5][1]],
-        ['Wed', weekly_json_data[6][1]],
-        ['Thu', weekly_json_data[4][1]],
-        ['Fri', weekly_json_data[0][1]],
-        ['Sat', weekly_json_data[2][1]],
-        ['Sun', weekly_json_data[3][1]]
-    ]);
+    var data = new google.visualization.arrayToDataTable(arr);
 
     // Set display options for the chart
         var options = {
@@ -170,33 +167,12 @@ function drawChart(x) {
             // Format data for Google Chart
             // In each array element, the first value is the x value (time)
             // The second value is the y value (average bikes available during any given hour)
-            var DATA = google.visualization.arrayToDataTable([
-                ['Time of Day (Hourly)', 'Available Bikes'],
-                ['00:00', daily_json_data[0][0]],
-                ['01:00', daily_json_data[1][0]],
-                ['02:00', daily_json_data[2][0]],
-                ['03:00', daily_json_data[3][0]],
-                ['04:00', daily_json_data[4][0]],
-                ['05:00', daily_json_data[5][0]],
-                ['06:00', daily_json_data[6][0]],
-                ['07:00', daily_json_data[7][0]],
-                ['08:00', daily_json_data[8][0]],
-                ['09:00', daily_json_data[9][0]],
-                ['10:00', daily_json_data[10][0]],
-                ['11:00', daily_json_data[11][0]],
-                ['12:00', daily_json_data[12][0]],
-                ['13:00', daily_json_data[13][0]],
-                ['14:00', daily_json_data[14][0]],
-                ['15:00', daily_json_data[15][0]],
-                ['16:00', daily_json_data[16][0]],
-                ['17:00', daily_json_data[17][0]],
-                ['18:00', daily_json_data[18][0]],
-                ['19:00', daily_json_data[19][0]],
-                ['20:00', daily_json_data[20][0]],
-                ['21:00', daily_json_data[21][0]],
-                ['22:00', daily_json_data[22][0]],
-                ['23:00', daily_json_data[23][0]], 
-            ]);
+            var arr = [['Time of Day (Hourly)', 'Available Bikes']];
+            for (let i = 0; i < daily_json_data.length; i++) {
+                var arr2 = [daily_json_data[i][1],daily_json_data[i][0]];
+                arr.push(arr2);
+              }
+            var DATA = google.visualization.arrayToDataTable(arr);
 
             // Display options for the chart
             var OPTIONS = {
