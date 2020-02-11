@@ -4,10 +4,9 @@ Biking Seville
 
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTKj4fPzPujSAxdx6mq6YG8xJQ-iUwoFyxxAvC-cLkbEuXKutHz"
  alt="Biking Dublin" title="BikingDublin" align="right" />
-Contributors:  
-Brendan Dwyer,   
-Michael McNulty,   
-Romain Ducarrouge   
+Authors:  
+Lucía Falcón,
+Emilio García
  
 This program was designed to collect dynamic data from the JCDecaux API about Seville City Bikes
 usage on a daily basis. The data collection was processed on an laptop locally and the data was 
