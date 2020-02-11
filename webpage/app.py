@@ -59,5 +59,13 @@ def get_hourly_info(number, weekday):
     data=cur.fetchall()
     return json.dumps(data)
 
+#SELECT AVG(available_bikes), address FROM seviBikes
+            #WHERE day = 'Saturday' GROUP BY address ORDER BY AVG(available_bikes) DESC limit 10
+			
+#SELECT count(address),day  FROM seviBikes
+            #WHERE address = 'GLORIETA PLUS ULTRA - Aprox. Estadio Manuel Ruiz de Lopera' GROUP BY day  
+			
+#SELECT count(address),hour  FROM seviBikes
+            #WHERE address = 'GLORIETA PLUS ULTRA - Aprox. Estadio Manuel Ruiz de Lopera' GROUP BY hour
 if __name__ == "__main__":
     app.run(debug=True)
