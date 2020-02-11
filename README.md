@@ -88,7 +88,8 @@ FAQ
 Q: 	Why are there three colors for the circles on the map?
 
 A: 	Each circle represents a unique bike station. The color of that circle represents its
-	current bike availability status.   
+	current bike availability status.
+        -Black Color: the station hasn't got any bikes.
 	-Red Color: the station has less than 25% of the bikes available for hire.  
 	-Orange Color: the station has between 25% and 75% of bikes available for hire.  
 	-Green Color: the station has over 75% of the bikes available for hire.  
