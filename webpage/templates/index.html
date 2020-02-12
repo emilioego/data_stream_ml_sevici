@@ -73,20 +73,25 @@ function ActivarBoton(){
 			<h1>Estaciones con más actualizaciones por hora (Domingo) </h1>
 				<table class="table table-condensed table-bordered table-hover" id = "ranking" name="ranking">
                 <tr>
-				    <td>
-					Frecuencia
-					</td>
 					<td>
 					Estación
 					</td>
 					<td>
 					Hora
 					</td>
+				    <td>
+					Bicis Disponibles
+					</td>
+				    <td>
+					Puestos Disponibles
+					</td>
 				</tr>
 				{%for i in range(0, 10)%} 
-					<td>{{frec[i]}}</td>
 					<td>{{stations[i]}}</td>
-					<td>{{hours[i]}}</td></tr>
+					<td>{{hours[i]}}</td>
+                    <td>{{frec[i]}}</td>
+                    <td>{{frec2[i]}}</td>
+                </tr>
 
 
 				{%endfor%} 

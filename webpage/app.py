@@ -30,6 +30,7 @@ def begin():
     names=[]
     numbers=[]
     frec=[]
+    frec2=[]
     stations=[]
     hours=[]
     con=get_db()
@@ -39,13 +40,14 @@ def begin():
     for row in data1:
         names.append(row[0])
         numbers.append(row[1])
-    cur.execute("SELECT count(address) as frecuencia,address,hour as estación FROM seviBikes WHERE day = 'Sunday' GROUP BY hour ORDER BY hour DESC limit 10")
+    cur.execute("SELECT address ,hour,available_bikes,available_bike_stands from seviBikes where day = 'Sunday' and address = 'GLORIETA PLUS ULTRA - Aprox. Estadio Manuel Ruiz de Lopera' group by hour order by hour desc limit 10")
     data2=cur.fetchall()
     for row in data2:
-        frec.append(row[0])
-        stations.append(row[1])
-        hours.append(row[2])
-    return render_template('index.html', MAPS_APIKEY = app.config["MAPS_APIKEY"],len = len(data1),names = names,numbers=numbers,stations=stations,frec=frec,hours=hours)
+        frec.append(row[2])
+        frec2.append(row[3])
+        stations.append(row[0])
+        hours.append(row[1])
+    return render_template('index.html', MAPS_APIKEY = app.config["MAPS_APIKEY"],len = len(data1),names = names,numbers=numbers,stations=stations,frec=frec,hours=hours,frec2=frec2)
 
 # Function to return the average number of available bikes each day during the week for
 # a specified station
