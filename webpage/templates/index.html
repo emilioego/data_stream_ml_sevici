@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='bikes.css')}}"/><!-- CSS -->
 <script type="text/javascript" src="{{url_for('static', filename='bikes.js')}}"></script><!-- Load Javascript file -->
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script><!-- Scripts for Google Charts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script type="text/javascript">
+
+
 google.charts.load('current', {'packages':['bar']});
+function ActivarBoton(){
+		document.getElementById("tabla").style.display = "block";
+		return true;
+}
 </script>
 
 <head>
@@ -30,15 +39,15 @@ google.charts.load('current', {'packages':['bar']});
 					<option value="{{numbers[i]}}" title="{{names[i]}}">{{res}}</option>
 				{%endfor%} 
                 </select>
-                <input id="goButton" type="button" value="Go!" onclick="toggleInfo();"></input>
+                <input id="goButton" type="button" value="Ir" onclick="toggleInfo();"></input>
             </form>
 
         </header> <!-- End of header -->
 
         <div id="more_info" style="display:none"> <!-- Expandable to display detailed information on selected station including graphs etc. -->
 
-            <h3 id="station_title">Station Name</h3><!-- innerHTML here will be changed at beginning of "toggleInfo()" function-->
-
+            <h3 id="station_title">Nombre de la estación</h3><!-- innerHTML here will be changed at beginning of "toggleInfo()" function-->
+           
             <div id="day_select"> <!-- Buttons to toggle what day information is displayed for -->
                 <input class="weekday" type="button" name="toggle" value="Monday" onclick="drawChart('Monday');">
                 <input class="weekday" type="button" name="toggle" value="Tuesday" onclick="drawChart('Tuesday');">
@@ -50,11 +59,40 @@ google.charts.load('current', {'packages':['bar']});
             </div> <!-- End of day select -->
 
             <!-- divs that are initially empty, and will be used to house the graphs generated -->
+
                 <div id="chart_daily" style="float:left"></div>
                 <div id="columnchart_material" style="float:right"></div>
 
         </div> <!-- End of more info -->
+		</br>	
+         <div id="boton_tabla" style="text-align:center">
+			<input class="tabla" type="button" name="tabla" value="Mostrar Tabla " onclick='ActivarBoton();'>
+			</div>
+			
+		<div id="tabla" style="display:none;">
+			<h1>Estaciones con más actualizaciones por hora (Domingo) </h1>
+				<table class="table table-condensed table-bordered table-hover" id = "ranking" name="ranking">
+                <tr>
+				    <td>
+					Frecuencia
+					</td>
+					<td>
+					Estación
+					</td>
+					<td>
+					Hora
+					</td>
+				</tr>
+				{%for i in range(0, 10)%} 
+					<td>{{frec[i]}}</td>
+					<td>{{stations[i]}}</td>
+					<td>{{hours[i]}}</td></tr>
 
+
+				{%endfor%} 
+                </table>
+				
+			</div>
         <div id="googleMap">
             <!-- div to contain Google map displaying all stations, their capacity, and the number of bikes available (at time of page load) -->
         </div>

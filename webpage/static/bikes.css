@@ -46,6 +46,7 @@ header {
 #stations {
     font-size:18px;
     padding:5px 0px;
+	color:black;
 }
 
 #more_info {
@@ -159,4 +160,7 @@ footer {
 }
 #columnchart_material {
     margin-top:20px;
+}
+button, input, select, textarea {
+    color: black;
 }

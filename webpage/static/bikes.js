@@ -105,8 +105,11 @@ var daily_json_data;
 // Sends a request to '/weekly/...' that triggers a flask function.
 // Function queries the database based on selected station, and returns averages as JSON
 function toggleInfo() {
+	document.getElementById("tabla").style.display="none";
+	document.getElementById("boton_tabla").style.display="none";
     document.getElementById("station_title").innerHTML = document.getElementById("stations").options[document.getElementById("stations").selectedIndex].text;
     document.getElementById("more_info").style.display="block";
+
     var path = '/weekly/'+document.getElementById("stations").value;
     var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange=function() {
@@ -178,7 +181,7 @@ function drawChart(x) {
 
             // Display options for the chart
             var OPTIONS = {
-                chart: {title: 'Hourly Availability'},
+                chart: {title:x+': '+'Hourly Availability'},
                 width:450,
                 height:400,
                 legend: { position: 'none' },

@@ -29,14 +29,23 @@ def close_connection(exception):
 def begin():
     names=[]
     numbers=[]
+    frec=[]
+    stations=[]
+    hours=[]
     con=get_db()
     cur=con.cursor()
     cur.execute("SELECT DISTINCT address,number FROM seviBikes")
-    data=cur.fetchall()
-    for row in data:
+    data1=cur.fetchall()
+    for row in data1:
         names.append(row[0])
         numbers.append(row[1])
-    return render_template('index.html', MAPS_APIKEY = app.config["MAPS_APIKEY"],len = len(data),names = names,numbers=numbers)
+    cur.execute("SELECT count(address) as frecuencia,address,hour as estación FROM seviBikes WHERE day = 'Sunday' GROUP BY hour ORDER BY hour DESC limit 10")
+    data2=cur.fetchall()
+    for row in data2:
+        frec.append(row[0])
+        stations.append(row[1])
+        hours.append(row[2])
+    return render_template('index.html', MAPS_APIKEY = app.config["MAPS_APIKEY"],len = len(data1),names = names,numbers=numbers,stations=stations,frec=frec,hours=hours)
 
 # Function to return the average number of available bikes each day during the week for
 # a specified station
